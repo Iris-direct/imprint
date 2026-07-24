@@ -29,7 +29,7 @@ The design is a **mixtape of your actual materials**: the project that dominated
 Requires [Claude Code](https://claude.com/claude-code), `python3`, and (optionally, for publishing) the `gh` CLI.
 
 ```bash
-git clone https://github.com/Yau-427/imprint
+git clone https://github.com/Iris-direct/imprint
 cp -r imprint/skill/imprint ~/.claude/skills/
 ```
 

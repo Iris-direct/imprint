@@ -43,6 +43,7 @@ You are making a **credibility artifact for a startup founder**. The audience is
 
 ## Quality bar (check before showing)
 
+- **Derived, not templated.** The palette, materials, and emphasis come from THIS founder's flagship identity and real tools — not a reused house look. Swap-test: if this page would fit another founder by changing only the numbers, redo it. A different founder must yield a visibly different page.
 - Reads as a **credibility artifact**: name + venture up top, velocity/leverage/reliability provable below.
 - Every Evidence claim has a number behind it; every Interpretation is visibly labeled as such.
 - The rhythm visualization (24h radial clock) is drawn from `hour_histogram`, not decorative.
