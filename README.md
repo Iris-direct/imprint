@@ -45,7 +45,10 @@ The agent collects your local stats, drafts the profile, shows it to you, and it
 
 ## Share it
 
-If you choose to publish (your call, always), open a PR adding your page at `claude-code-profiles/p/<your-github-login>/index.html` — see the [PR guide](claude-code-profiles/p/README.md). After merge your profile goes live at **[iris.direct/claude-code-profiles](https://iris.direct/claude-code-profiles)**, the community gallery of Claude Code founders.
+If you choose to publish (your call, always), get on **[iris.direct/imprint-profiles](https://iris.direct/imprint-profiles)** two ways — see the [publish guide](imprint-profiles/p/README.md):
+
+- **Pull request** (devs): add your page at `imprint-profiles/p/<your-github-login>/index.html` and open a PR.
+- **Send it in** (no git): send your `index.html` to Telegram [@to_be_king](https://t.me/to_be_king) or `max@iris.direct` — it gets published for you, usually same day.
 
 ## How it works
 

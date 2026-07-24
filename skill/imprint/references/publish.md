@@ -73,7 +73,7 @@ Then give the user the live URL: `https://<owner>.github.io/imprint/` (allow a m
 Сделай свой: <PROJECT_URL>
 ```
 
-`<PROJECT_URL>` — the open-source project home: **https://github.com/Iris-direct/imprint** (canonical). The community gallery lives at **https://iris.direct/claude-code-profiles**.
+`<PROJECT_URL>` — the open-source project home: **https://github.com/Iris-direct/imprint** (canonical). The community gallery lives at **https://iris.direct/imprint-profiles**.
 
 ## Update flow
 
