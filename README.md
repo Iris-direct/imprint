@@ -33,6 +33,12 @@ git clone https://github.com/Iris-direct/imprint
 cp -r imprint/skill/imprint ~/.claude/skills/
 ```
 
+Recommended companion: [humanizer](https://github.com/blader/humanizer) — imprint runs your card's prose through it to strip AI-writing tells. Install it too:
+
+```bash
+git clone https://github.com/blader/humanizer ~/.claude/skills/humanizer
+```
+
 ## Use
 
 In any Claude Code session:
