@@ -6,6 +6,12 @@
 <base href="/imprint-profiles/">
 <title>imprint profiles</title>
 <meta name="description" content="Not a résumé — telemetry. One-page founder execution profiles generated from your own AI coding sessions.">
+<meta property="og:title" content="imprint — not a résumé, telemetry">
+<meta property="og:description" content="Профиль фаундера, собранный из твоих же рабочих сессий. Твой дизайн, твои цифры, твоя ссылка.">
+<meta property="og:image" content="https://iris.direct/imprint-profiles/og.png">
+<meta property="og:url" content="https://iris.direct/imprint-profiles/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Spectral:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -107,22 +113,22 @@
 
   <section id="publish">
     <h2>Get your profile on this page</h2>
-    <p class="sub">First generate your card: install the <a href="https://github.com/Iris-direct/imprint" style="color:var(--cy)">imprint</a> skill and run <code style="font-family:var(--mono);color:var(--term)">/imprint</code> in Claude Code — it builds your page locally. Then publish it one of two ways:</p>
+    <p class="sub">Install the <a href="https://github.com/Iris-direct/imprint" style="color:var(--cy)">imprint</a> skill and run <code style="font-family:var(--mono);color:var(--term)">/imprint</code> in Claude Code. It builds your page locally, then offers to publish it — and does the whole thing for you:</p>
     <div class="routes">
-      <div class="route">
-        <div class="tag">route A · pull request</div>
-        <h3>Open a PR</h3>
-        <div class="who">for developers</div>
+      <div class="route pick">
+        <div class="tag">just say yes</div>
+        <h3>The agent publishes it</h3>
+        <div class="who">no forking, no PRs, nothing manual</div>
         <ol>
-          <li>Add your page at <code>imprint-profiles/p/&lt;your-github-login&gt;/index.html</code></li>
-          <li>Open a pull request to <code>Iris-direct/imprint</code></li>
-          <li>On merge it appears in the gallery below</li>
+          <li>You get your own live page: <code>&lt;your-login&gt;.github.io/imprint</code></li>
+          <li>Plus a share image for X / Telegram</li>
+          <li>It opens the gallery PR for you — you only say yes</li>
         </ol>
       </div>
-      <div class="route pick">
-        <div class="tag">route B · send it in</div>
-        <h3>Send me your card</h3>
-        <div class="who">for everyone — no git needed</div>
+      <div class="route">
+        <div class="tag">or send it in</div>
+        <h3>Hand it to me</h3>
+        <div class="who">if the agent couldn't, or you'd rather not</div>
         <ol>
           <li>Attach your <code>index.html</code> and your GitHub / preferred handle</li>
           <li>Send it to me — I publish it for you, usually same day</li>

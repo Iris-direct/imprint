@@ -40,9 +40,9 @@ You are making a **bespoke portrait of one person and the work they make**, buil
 
 7. **Humanize the prose.** After the draft, run every prose block through the **humanizer** skill (`blader/humanizer`) — or apply its patterns — to strip AI-tells: aphorism-punchlines, rule-of-three, «не X, а Y» negative parallelisms, em-dash drama, significance inflation, promotional adjectives. Hard rule: no fabrication; specificity comes only from the data. Then open the card for the user.
 
-8. **Publish (private-first).** Read `references/publish.md` and follow it exactly: private GitHub repo `imprint` immediately; public flip + Pages **only after an explicit yes in chat**.
+8. **Offer the loop.** Show the card, ask what to fix. Iterate until they say "это точно я".
 
-9. **Offer the loop.** Show the card, ask what to fix. Done when the person says "это точно я".
+9. **Then offer to publish — and do all the work yourself.** Read `references/publish.md` and follow it. A card that never leaves the disk is a card nobody sees, and the person came here to have something to show. Once they're happy, make the offer once, plainly: their own live URL (`https://<login>.github.io/imprint/`), a share image for reposting, and — if they want — a PR into the community gallery. On one explicit yes you run every step: repo, Pages, `card.png`, OG meta, fork and PR. They should never have to fork, copy files into paths, or open a PR by hand. No yes → everything stays local, no nagging.
 
 ## Quality bar (check before showing)
 
@@ -56,3 +56,4 @@ You are making a **bespoke portrait of one person and the work they make**, buil
 - Works offline as a single file; survives missing web fonts.
 - Footer colophon: methodology + «сделано скиллом imprint — сделай свой» linking the project repo. Quiet, tasteful.
 - No AI-slop visuals (manifesto blacklist) and no client-recognizable details (privacy pass).
+- **They end up with something to show.** Either a live URL + share image (if they said yes to publishing), or a clear local path and a standing offer. Never end the session with the card stranded on disk and the publish option never mentioned.
