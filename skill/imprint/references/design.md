@@ -29,11 +29,15 @@ Each section's material is *earned* by what this person actually used, so the pa
 - data/SQL/Python-heavy → a ledger or plotted-grid material
 Languages appear in their **official brand colors** (TypeScript blue, JS yellow, Rust rust, Go cyan, Swift orange…) in a labeled spectrum bar — color follows the real entity, not decoration. Cohesion: one grid, one type system, a small «трек NN · материал: …» label per section; ≤3 distinct materials on the page; every color traceable to something the person actually worked with. Data-derived ≠ chaos.
 
-**Emphasis & recency — lead with this founder's strength, weighted to the last month.**
-Compute material shares and project mix from the last ~30 days of sessions (not the whole span) — the page shows who they are NOW; state the shares in the liner note («в этом месяце звучит: …»). Then **lead with whatever is genuinely strongest for THIS person**: a rare leverage ratio, or relentless velocity, or a sustainable rhythm, or deep single-product focus. If one project dominates the recent month (>50%), its identity can become the page ground; if the person is a portfolio juggler, the ground may instead come from their temperament. Don't force every card through one emphasis — the sections may be reordered or resized to fit the person; only the honesty contract and privacy pass are fixed.
+**Emphasis & recency — lead with this founder's strength, weighted to recent work.**
+Prefer the last ~30 days over the whole span — the page shows who they are NOW. Be honest about what you can actually compute: `stats.json` carries lifetime totals plus per-project `first_seen`/`last_seen`, not time-sliced language or project data. So either derive the recent window yourself (per-project activity via those timestamps, or a live `git log --since` in the project paths), or state the real period you used. **Never label a lifetime figure as "this month".** Whatever window you used, name it in the liner note («за последние 30 дней…» / «за 65 дней наблюдений…»). Then **lead with whatever is genuinely strongest for THIS person**: a rare leverage ratio, or relentless velocity, or a sustainable rhythm, or deep single-product focus. If one project dominates the recent month (>50%), its identity can become the page ground; if the person is a portfolio juggler, the ground may instead come from their temperament. Don't force every card through one emphasis — the sections may be reordered or resized to fit the person; only the honesty contract and privacy pass are fixed.
 
-**Native narrative — «Сейчас», the month's journal.**
-Right after the title, a section tells what the person is building THIS month, natively: 1–2 sentences of prose + a journal of 5–8 verbatim commit subjects from the user's OWN flagship repo (`git log --since="30 days ago"`), styled as a live log (type prefixes colored: feat/fix/docs). Commit subjects are the person's own poetry — don't paraphrase them. NEVER source this journal from client/NDA repos; own repos only.
+**Native narrative — «Сейчас», the month's journal (when the repos are reachable).**
+Right after the title, a section tells what the person is building THIS month, natively: 1–2 sentences of prose + a journal of 5–8 verbatim commit subjects from the user's OWN flagship repo, styled as a live log (type prefixes colored: feat/fix/docs). Commit subjects are the person's own poetry — don't paraphrase them. Get them live: `stats.json` stores each project's `path`, so run `git log --since="30 days ago" --pretty=format:'%s'` there yourself; the collector does not capture subjects.
+
+**If the repos aren't reachable** (path moved, not a git repo, no commits in the window) — this is common, so handle it instead of improvising: drop the journal, and write the "what I'm building now" prose from the project mix and first-prompt themes instead. Say plainly in the colophon that the journal was unavailable. Never invent commit lines.
+
+Ranking against privacy: the privacy pass outranks this rule. Commit subjects from client/NDA repos are never sourced, and even own-repo subjects are dropped when they would expose internal architecture (see *Never leak the build*). "Zero work content" in SKILL.md §4 governs **prompt quotes**; own-repo commit subjects may carry work content as long as they leak no internals and no client identity. When those two collide, cut the line.
 
 **Typography — the design IS the typography.**
 - Display serif with real Cyrillic: Playfair Display, Spectral, Cormorant Garamond, or Literata. Huge sizes for the archetype title (clamp 3.5–7rem), tight leading, optical margins.
@@ -45,6 +49,8 @@ Right after the title, a section tells what the person is building THIS month, n
 - One column of meaning with wide margins; marginalia in the margins (that's where «Между строк» lives).
 - Numbered sections like a catalog (01, 02, 03…), thin rules, generous whitespace.
 - Max-width ~1000px; must read beautifully at 375px too (margins collapse, marginalia become inline asides).
+- **Bespoke SVG breaks on phones unless you plan for it.** A mark authored in a ~960 viewBox renders its 11px labels at ~4px on a 375px screen — unreadable, and nothing warns you. Either size label text in viewBox units adjusted by media query, or move dense legends out of the SVG into HTML that reflows. Checking trap: headless Chrome clamps `--window-size` to a 500px minimum, so the obvious mobile screenshot silently renders at 500px and crops — verify 375px through an iframe instead.
+- **Compose the first screen for the 1200×630 crop.** `shot.sh` shoots the top of the page at OG aspect ratio for the share image, so the name, the one-line positioning, and a signature mark should all land inside roughly the first 630 CSS pixels. A hero that's beautiful full-page but empty in that band produces a dead share card.
 - Subtle paper grain or ink texture via CSS (radial-gradient noise, low opacity) is welcome; keep it under 3% visual weight.
 
 **Data as bespoke marks, invented per person — not a fixed widget set.**
@@ -75,7 +81,7 @@ The paragraphs are the biggest AI-tell and a hidden source of sameness: cards th
 
 **Blacklist (instant fail):**
 - Default purple/blue-on-dark gradients and habitual glassmorphism — reached for out of habit rather than derived (either is allowed ONLY when it is genuinely the flagship's own identity); `border-radius: 16px+` pill-card grids
-- Emoji as decoration, progress bars for "skills", star ratings
+- Emoji as decoration, star ratings, and **rating** bars — a bar that scores a person ("skills: 80%"). A proportional bar or area mark of *real counted data* (languages, tools, commits) is fine and often the clearest form; the ban is on invented scores, not on measured quantities.
 - Corporate hero sections, CTA buttons (nothing on this page is clickable except the colophon link)
 - Theme toggles, cookie-banner aesthetics, drop shadows deeper than a whisper
 
