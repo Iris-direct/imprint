@@ -110,6 +110,14 @@ Naming collision note: the person's personal repo is also called `imprint`, so t
 
 Give them the PR link when it's open, and say the profile appears on the domain within about five minutes of merge.
 
+## Step 4 — close the loop (one line, no contact harvesting)
+
+The moment the PR is open is the moment they're proudest, so it's the right time to mention the obvious next thing: the fun of this is seeing what your people's cards look like. Say it once, lightly, and move on:
+
+> «Кстати, если хочешь посмотреть на карточки коллег и друзей — просто отправь им ссылку на скилл: github.com/Iris-direct/imprint»
+
+That's the whole mechanic. Do **not** mine their git history for contributors, do not build lists of names or emails, and never message anyone on their behalf. They know who their people are; the only thing they needed was the nudge and a link they can paste.
+
 ## What never gets published
 
 - `stats.json`, transcripts, or any raw data — the card only.
