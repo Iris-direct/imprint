@@ -25,20 +25,37 @@ stats.json
 
 If `~/imprint` happens to be a checkout of the imprint *project* repo (the author's case), personal cards live in `personal/` there, which is gitignored — never commit a personal card into the project repo.
 
-## The offer (make it once, at peak delight)
+## The offer — three levels, not one yes/no
 
-Right after they've seen the card and are happy with it, offer the whole thing in one question. Say plainly what will happen, then wait for a clear yes:
+A card about how someone works is personal. Plenty of people want to show it to an investor or two without putting their working hours on the open internet, and collapsing that into "publish or don't" loses them. Offer the levels explicitly and let them pick:
 
-> «Могу сделать её живой ссылкой: подниму тебе репозиторий `imprint` с GitHub Pages — получится `https://<твой-логин>.github.io/imprint/`, плюс картинка для репоста. И, если хочешь, добавлю в общую галерею iris.direct/imprint-profiles — PR отправлю сам. Делаем?»
+> «Куда её деть?
+> **1. Оставить у себя** — файл и картинка на диске, никуда не уходят. Пересылаешь лично кому хочешь.
+> **2. Ссылка для своих** — подниму страницу на твоём GitHub, но закрою её от поиска и никуда не добавлю. Ссылка работает, по имени тебя не находит.
+> **3. Публично** — то же плюс карточка в общей галерее iris.direct/imprint-profiles, PR отправлю сам.»
+
+**Be straight about what level 2 actually is.** It is obscurity, not secrecy, and saying so is the difference between informed consent and a nasty surprise:
+
+> «Оговорюсь: ссылка не индексируется и нигде не висит, но кто её получил — может переслать дальше, а на бесплатном GitHub репозиторий с этой страницей всё равно публичный. Если нужна настоящая приватность — это первый вариант.»
+
+Never oversell level 2 as private. If they need real privacy, level 1 is the honest answer.
 
 Rules:
-- One explicit yes covers the steps you named. A vague reply, silence, or "потом" means everything stays local. Never publish on assumption.
-- If they want the personal page but NOT the gallery (or the reverse), honour exactly that — the two are separate.
-- Preconditions: `gh auth status` succeeds. If it doesn't, tell them the one command to fix it (`gh auth login`) and offer to continue after. Without `gh`, the local card still counts as delivered.
+- Their pick covers exactly the steps you named for it, nothing more. Silence, a vague reply, or "потом" means level 1. Never publish on assumption.
+- Level 2 and level 3 differ by exactly two things: the gallery PR, and a `<meta name="robots" content="noindex, nofollow">` in the card's `<head>`. Add that meta on level 2, leave it off on level 3.
+- Preconditions for 2 and 3: `gh auth status` succeeds. If it doesn't, tell them the one command to fix it (`gh auth login`) and offer to continue after. Without `gh`, level 1 still counts as delivered.
 
-## Step 1 — their own page (their value, do this first)
+## Level 1 — keep it local
 
-Their URL, on their account. This is what makes publishing worth it for them.
+Nothing to publish, but don't just walk away: generate `card.png` (see Level 2, step "share image") and hand them both paths, so they have something to send. A single self-contained HTML file is a perfectly good thing to email or drop in a chat, and it's the only option here that is genuinely private. Then stop — no repo, no Pages, no nagging.
+
+## Step 1 — their own page (levels 2 and 3)
+
+Their URL, on their account. This is what makes publishing worth it for them. On **level 2**, add the robots meta to `<head>` before pushing so search engines skip it:
+
+```html
+<meta name="robots" content="noindex, nofollow">
+```
 
 ```bash
 cd ~/imprint
@@ -60,7 +77,7 @@ curl -s "https://$LOGIN.github.io/imprint/" | grep -o "<title>[^<]*</title>"
 
 Then give them the live URL. If Pages is still building, say so plainly and tell them it goes live in a minute — don't report a 404 as done.
 
-## Step 2 — the share image + OG
+## Step 2 — the share image + OG (all levels; OG only for 2 and 3)
 
 People post screenshots, not URLs. Give them a picture and make the link unfurl properly.
 
@@ -82,7 +99,7 @@ Once the Pages URL is known, add OG/Twitter meta to `index.html` `<head>` so the
 
 Hand them both: the link and the PNG path, so they can post immediately.
 
-## Step 3 — the gallery PR (you do it, not them)
+## Step 3 — the gallery PR (level 3 only — you do it, not them)
 
 The community gallery is [Iris-direct/imprint](https://github.com/Iris-direct/imprint) → live at **iris.direct/imprint-profiles**. Submitting is a fork + one file + a PR, and you run all of it:
 

@@ -44,7 +44,7 @@ You are making a **bespoke portrait of one person and the work they make**, buil
 
 8. **Offer the loop.** Show the card, ask what to fix. Iterate until they say "это точно я".
 
-9. **Then offer to publish — and do all the work yourself.** Read `references/publish.md` and follow it. A card that never leaves the disk is a card nobody sees, and the person came here to have something to show. Once they're happy, make the offer once, plainly: their own live URL (`https://<login>.github.io/imprint/`), a share image for reposting, and — if they want — a PR into the community gallery. On one explicit yes you run every step: repo, Pages, `card.png`, OG meta, fork and PR. They should never have to fork, copy files into paths, or open a PR by hand. No yes → everything stays local, no nagging.
+9. **Then offer to publish — and do all the work yourself.** Read `references/publish.md` and follow it. A card that never leaves the disk is a card nobody sees, and the person came here to have something to show. But a portrait of how someone works is personal, so offer three levels rather than a yes/no: keep it local, an unlisted link for showing a few people, or fully public plus the community gallery. Be straight that an unlisted link is obscurity and not secrecy. Whatever they pick, you run every step of it yourself — repo, Pages, `card.png`, OG meta, robots meta, fork and PR — they should never fork, copy files into paths, or open a PR by hand. No answer → local, no nagging.
 
 ## Quality bar (check before showing)
 
