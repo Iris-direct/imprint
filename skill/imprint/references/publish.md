@@ -86,18 +86,25 @@ Hand them both: the link and the PNG path, so they can post immediately.
 
 The community gallery is [Iris-direct/imprint](https://github.com/Iris-direct/imprint) → live at **iris.direct/imprint-profiles**. Submitting is a fork + one file + a PR, and you run all of it:
 
+**Name the fork explicitly.** Their personal card repo from Step 1 is already called `imprint`, so a default fork of `Iris-direct/imprint` would collide with it. Always pass `--fork-name imprint-gallery` so the fork has its own deterministic name and you never have to guess where it landed:
+
 ```bash
 LOGIN=$(gh api user --jq .login)
 WORK=$(mktemp -d)
-gh repo fork Iris-direct/imprint --clone=false 2>/dev/null || true   # no-op if the fork exists
-git clone -q "https://github.com/$LOGIN/imprint-gallery-fork" "$WORK" 2>/dev/null || \
-  git clone -q "https://github.com/$LOGIN/imprint" "$WORK"
+
+# Deterministic fork name — avoids colliding with their own `imprint` repo.
+gh repo fork Iris-direct/imprint --fork-name imprint-gallery --clone=false 2>/dev/null || true
+gh repo view "$LOGIN/imprint-gallery" >/dev/null 2>&1 || { echo "fork failed"; }
+
+git clone -q "https://github.com/$LOGIN/imprint-gallery" "$WORK"
 cd "$WORK"
 git remote add upstream https://github.com/Iris-direct/imprint 2>/dev/null || true
-git fetch -q upstream main && git checkout -q -B "profile/$LOGIN" upstream/main
+git fetch -q upstream main
+git checkout -q -B "profile/$LOGIN" upstream/main
 mkdir -p "imprint-profiles/p/$LOGIN"
 cp ~/imprint/index.html "imprint-profiles/p/$LOGIN/index.html"
-git add "imprint-profiles/p/$LOGIN/index.html"
+[ -f ~/imprint/card.png ] && cp ~/imprint/card.png "imprint-profiles/p/$LOGIN/card.png"
+git add "imprint-profiles/p/$LOGIN"
 git commit -q -m "profile: $LOGIN"
 git push -q -u origin "profile/$LOGIN"
 gh pr create --repo Iris-direct/imprint \
@@ -106,7 +113,7 @@ gh pr create --repo Iris-direct/imprint \
   --head "$LOGIN:profile/$LOGIN"
 ```
 
-Naming collision note: the person's personal repo is also called `imprint`, so the fork may land under a different name — resolve the actual fork URL from `gh repo fork` output rather than assuming. If the fork flow fails for any reason, fall back gracefully: tell them the PR couldn't be opened automatically, and offer to send the finished HTML to **max@iris.direct** or **t.me/to_be_king** for manual placement. Never leave them at a dead end.
+Sanity check before you claim success: `gh pr list --repo Iris-direct/imprint --author @me` should show it. If any step fails (missing `gh` scopes, fork blocked, push rejected), don't fight it silently — say plainly that the automatic PR didn't go through, and offer to send the finished HTML to **max@iris.direct** or **t.me/to_be_king** for manual placement. Never leave them at a dead end.
 
 Give them the PR link when it's open, and say the profile appears on the domain within about five minutes of merge.
 
