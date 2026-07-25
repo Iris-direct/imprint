@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Imprint">
+  <!-- the plate -->
+  <rect width="32" height="32" rx="7" fill="#0b0f1a"/>
+  <!-- the inked sort -->
+  <rect x="4.5" y="4.5" width="23" height="23" rx="4.5" fill="#22d3ee"/>
+  <!-- the letter, knocked out of the ink — an impression, not a print -->
+  <rect x="13.6" y="8.4" width="4.8" height="4.8" rx="1.2" fill="#0b0f1a"/>
+  <rect x="13.6" y="15.2" width="4.8" height="8.4" rx="1.2" fill="#0b0f1a"/>
+</svg>
